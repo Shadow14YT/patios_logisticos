@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Técnica: Patios Logísticos | UPQ - LCIA227</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#0052cc',
+                            600: '#0043a8',
+                            700: '#003380',
+                            800: '#0a2540',
+                            900: '#051427',
+                        },
+                        accent: {
+                            500: '#ff6b35',
+                            600: '#e85a26',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a2540 0%, #0052cc 60%, #003380 100%);
+        }
+        .active-tab {
+            border-bottom: 3px solid #0052cc;
+            color: #0052cc;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-filter backdrop-blur-md border-b border-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center font-bold text-xl shadow-lg shadow-brand-500/30">
+                        <i class="fa-solid => fa-truck-ramp-box"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-brand-100 font-semibold block">UPQ - LCIA227</span>
+                        <span class="text-lg font-bold tracking-tight text-white">Patios Logísticos</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center space-x-1 text-sm font-medium">
+                    <a href="#inicio" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Inicio</a>
+                    <a href="#definicion" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Concepto</a>
+                    <a href="#funciones" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Funciones</a>
+                    <a href="#caracteristicas" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Características</a>
+                    <a href="#tipos" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Tipos</a>
+                    <a href="#operacion" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Operación</a>
+                    <a href="#casos" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Casos Reales</a>
+                    <a href="#evaluador" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-brand-100 transition">Evaluación</a>
+                    <a href="#quiz" class="px-3 py-2 rounded-lg bg-accent-500 hover:bg-accent-600 text-white transition font-semibold">Quiz</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-800 bg-slate-900 px-4 pt-2 pb-4 space-y-1 text-sm">
+            <a href="#inicio" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Inicio</a>
+            <a href="#definicion" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Concepto</a>
+            <a href="#funciones" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Funciones</a>
+            <a href="#caracteristicas" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Características</a>
+            <a href="#tipos" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Tipos de Patios</a>
+            <a href="#operacion" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Flujo de Operación</a>
+            <a href="#casos" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Casos Reales</a>
+            <a href="#evaluador" class="block px-3 py-2 rounded-lg hover:bg-slate-800 text-slate-200">Evaluador Checklist</a>
+            <a href="#quiz" class="block px-3 py-2 rounded-lg bg-accent-500 text-white font-semibold text-center mt-2">Cuestionario Interactivo</a>
+        </div>
+    </header>
+
+    <!-- Hero Section & Institutional Header -->
+    <section id="inicio" class="hero-gradient text-white py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold uppercase tracking-wider text-brand-100">
+                        <i class="fa-solid fa-graduation-cap"></i> Guía Académica Oficial
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Gestión y Operación de <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-100">Patios Logísticos</span>
+                    </h1>
+                    <p class="text-lg text-slate-200 leading-relaxed font-light">
+                        Plataforma educativa e interactiva diseñada a partir de la guía temática de la materia <span class="font-semibold text-white">LCIA227</span> en la Licenciatura de Comercio Internacional y Aduanas.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="#definicion" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-white font-semibold shadow-lg shadow-accent-500/30 transition transform hover:-translate-y-0.5">
+                            Explorar Contenido <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#quiz" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/20 backdrop-blur-md transition">
+                            <i class="fa-solid fa-list-check"></i> Probar Conocimientos
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Academic Metadata Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-8 text-white shadow-2xl space-y-6">
+                        <div class="flex items-center space-x-3 border-b border-white/10 pb-4">
+                            <div class="w-12 h-12 rounded-lg bg-white text-brand-800 flex items-center justify-center font-black text-2xl">
+                                UPQ
+                            </div>
+                            <div>
+                                <h2 class="font-bold text-lg leading-snug">Universidad Politécnica de Querétaro</h2>
+                                <p class="text-xs text-brand-100">Lic. en Comercio Internacional y Aduanas</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <span class="text-xs text-slate-300 uppercase tracking-wider block font-semibold mb-1">Docente Asesor</span>
+                                <div class="flex items-center gap-2 font-medium text-base">
+                                    <i class="fa-solid fa-user-tie text-accent-500"></i> Mtro. Morales Ruíz Francisco Rogelio
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="text-xs text-slate-300 uppercase tracking-wider block font-semibold mb-1">Integrantes / Autoras</span>
+                                <ul class="space-y-2 mt-1">
+                                    <li class="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+                                        <i class="fa-solid fa-circle-user text-blue-300 text-xs"></i> Madariaga Escalona Julieta del Rosario
+                                    </li>
+                                    <li class="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+                                        <i class="fa-solid fa-circle-user text-blue-300 text-xs"></i> Martinez Martinez Leslie Jaretzi
+                                    </li>
+                                    <li class="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+                                        <i class="fa-solid fa-circle-user text-blue-300 text-xs"></i> Salazar Zarate Sayuri Yamile
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-2 flex justify-between items-center text-xs text-slate-300 border-t border-white/10">
+                                <span>Clave Asignatura: <strong>LCIA227</strong></span>
+                                <span>Edición Interactiva</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: ¿Qué son los Patios Logísticos? -->
+    <section id="definicion" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Sección 01</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">¿Qué es un Patio Logístico?</h2>
+                <p class="text-slate-600 mt-4 text-lg">Definición operativa, entornos de funcionamiento y versatilidad funcional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-brand-500 text-white flex items-center justify-center text-sm"><i class="fa-solid fa-warehouse"></i></span>
+                            Definición Técnica
+                        </h3>
+                        <p class="text-slate-700 leading-relaxed">
+                            Un <strong>patio logístico</strong> es un espacio acondicionado para recibir, estacionar, organizar, resguardar y mover vehículos de carga, remolques, contenedores o mercancías durante una operación logística.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 text-lg">Flexibilidad de Integración:</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="p-4 rounded-xl border border-slate-200 hover:border-brand-500 transition bg-white shadow-sm flex items-start gap-3">
+                                <i class="fa-solid fa-square-check text-brand-500 mt-1"></i>
+                                <span class="text-sm font-medium text-slate-700">Operación Independiente</span>
+                            </div>
+                            <div class="p-4 rounded-xl border border-slate-200 hover:border-brand-500 transition bg-white shadow-sm flex items-start gap-3">
+                                <i class="fa-solid fa-square-check text-brand-500 mt-1"></i>
+                                <span class="text-sm font-medium text-slate-700">Terminales Marítimas/Ferroviarias</span>
+                            </div>
+                            <div class="p-4 rounded-xl border border-slate-200 hover:border-brand-500 transition bg-white shadow-sm flex items-start gap-3">
+                                <i class="fa-solid fa-square-check text-brand-500 mt-1"></i>
+                                <span class="text-sm font-medium text-slate-700">Centros de Distribución (CEDIS)</span>
+                            </div>
+                            <div class="p-4 rounded-xl border border-slate-200 hover:border-brand-500 transition bg-white shadow-sm flex items-start gap-3">
+                                <i class="fa-solid fa-square-check text-brand-500 mt-1"></i>
+                                <span class="text-sm font-medium text-slate-700">Parques Industriales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-sm flex gap-3 items-start">
+                        <i class="fa-solid fa-circle-info text-amber-600 text-lg mt-0.5"></i>
+                        <p>
+                            <strong>Diversidad Operativa:</strong> El término varía según la especialidad. Algunos patios se enfocan exclusivamente en maniobras de camiones, otros en resguardo de autos o almacenamiento temporal de contenedores. No todos poseen las mismas instalaciones ni realizan identicales actividades.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Patio Logístico Operacional" class="w-full h-80 sm:h-96 object-cover">
+                        <div class="p-6 bg-slate-900 text-white">
+                            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                                <span>Infraestructura Clave</span>
+                                <span>Comercio & Cadena de Suministro</span>
+                            </div>
+                            <p class="text-sm font-medium text-slate-200">
+                                Los patios actúan como pulmones operativos que regulan el tráfico vehicular de carga pesada y coordinan los tiempos entre transporte y almacenamiento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Funciones Principales -->
+    <section id="funciones" class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-brand-100/50 px-3 py-1 rounded-full">Sección 02</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Funciones Principales</h2>
+                <p class="text-slate-600 mt-4 text-lg">Haz clic en cada función para explorar el detalle operativo que se lleva a cabo en la guía.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-brand-500 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Recepción y Registro</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Control exhaustivo para recibir e ingresar unidades en el sistema informático de la instalación, validando conductores, documentación y motivos de visita.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Organización de Circulación</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Sistemática de estacionamiento y gestión del tráfico fluido para camiones, remolques y contenedores evitando cuellos de botella internos.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-truck-trailer"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Maniobras Operativas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Ejecución eficiente de maniobras de acomodo, enganche, desenganche y posicionamiento estratégico de unidades dentro del recinto.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Carga y Descarga</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Facilidad operativa inmediata cuando el patio se conecta directamente con andenes, almacenes centrales o terminales especializadas.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Resguardo Temporal</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Custodia segura de vehículos, contenedores o mercancías bajo estándares de seguridad acordes al servicio contratado.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-arrows-split-up-and-left"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Coordinación Integral</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Enlace sintonizado entre unidades de transporte, operadores de patio, almacenes centrales y centros de distribución final.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Características de un Patio Logístico -->
+    <section id="caracteristicas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Sección 03</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Características Clave de Infraestructura</h2>
+                <p class="text-slate-600 mt-4 text-lg">Atributos técnicos indispensables para un rendimiento logístico óptimo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-500 transition shadow-sm group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-brand-500 transition">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Ubicación Estratégica</h3>
+                    <p class="text-slate-600 text-sm">Cercanía directa con arterias carreteables principales, zonas industriales, aeropuertos, puertos y terminales ferroviarias.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-500 transition shadow-sm group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-brand-500 transition">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Superficie Amplia y Resistente</h3>
+                    <p class="text-slate-600 text-sm">Capacidad de soporte para el rodamiento y estacionamiento prolongado de vehículos pesados sin desgaste térmico o mecánico.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-500 transition shadow-sm group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-brand-500 transition">
+                        <i class="fa-solid fa-signs-post"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Distribución Señalizada</h3>
+                    <p class="text-slate-600 text-sm">Carriles delimitados, zonas de espera marcadas, cajones asignados y rutas claras para el flujo continuo de maniobras.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-500 transition shadow-sm group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-brand-500 transition">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Control de Accesos</h3>
+                    <p class="text-slate-600 text-sm">Validación rigurosa de datos del operador, matrículas vehiculares, códigos de carga y horarios programados.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-500 transition shadow-sm group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-brand-500 transition">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Seguridad Integral</h3>
+                    <p class="text-slate-600 text-sm">Cercado perimetral, iluminación potente, videovigilancia CCTV en tiempo real, personal técnico e imprevistos.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-brand-500 transition shadow-sm group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-900 text-white flex items-center justify-center mb-4 group-hover:bg-brand-500 transition">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Equipo y Tecnología</h3>
+                    <p class="text-slate-600 text-sm">Tractores de patio, grúas Reach Stacker, montacargas, software YMS (Yard Management System) e identificación RFID.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Tipos de Patios Logísticos con Filtros Interactivos -->
+    <section id="tipos" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-accent-500 font-bold text-xs uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Sección 04</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-3">Tipos de Patios Logísticos</h2>
+                <p class="text-slate-400 mt-4 text-lg">Haz clic en los filtros para explorar la clasificación de acuerdo a su entorno y especialidad operacional.</p>
+            </div>
+
+            <!-- Interactive Filters -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="type-filters">
+                <button onclick="filterTypes('all')" class="type-filter-btn active bg-brand-500 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Todos</button>
+                <button onclick="filterTypes('maniobras')" class="type-filter-btn bg-slate-800 text-slate-300 hover:bg-slate-700 px-4 py-2 rounded-xl text-sm font-semibold transition">Maniobras</button>
+                <button onclick="filterTypes('contenedores')" class="type-filter-btn bg-slate-800 text-slate-300 hover:bg-slate-700 px-4 py-2 rounded-xl text-sm font-semibold transition">Contenedores</button>
+                <button onclick="filterTypes('transporte')" class="type-filter-btn bg-slate-800 text-slate-300 hover:bg-slate-700 px-4 py-2 rounded-xl text-sm font-semibold transition">Transporte / Remolques</button>
+                <button onclick="filterTypes('resguardo')" class="type-filter-btn bg-slate-800 text-slate-300 hover:bg-slate-700 px-4 py-2 rounded-xl text-sm font-semibold transition">Resguardo Vehicular</button>
+                <button onclick="filterTypes('intermodal')" class="type-filter-btn bg-slate-800 text-slate-300 hover:bg-slate-700 px-4 py-2 rounded-xl text-sm font-semibold transition">Intermodal / Portuario</button>
+            </div>
+
+            <!-- Grid of Types -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="types-grid">
+                <!-- Patio 1 -->
+                <div class="type-card maniobras bg-slate-800/80 border border-slate-700 rounded-2xl p-6 transition hover:border-brand-500">
+                    <div class="text-brand-500 text-3xl mb-4"><i class="fa-solid fa-truck-moving"></i></div>
+                    <span class="text-xs text-brand-100 bg-brand-500/20 px-2 py-1 rounded font-semibold uppercase">Almacenes y CEDIS</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Patio de Maniobras</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Espacio diseñado para acomodar vehículos y facilitar el movimiento fluido entre las zonas de estacionamiento, andenes de carga y áreas operativas.
+                    </p>
+                    <div class="text-xs text-slate-400 bg-slate-900/50 p-3 rounded-lg">
+                        <strong>Ejemplo:</strong> Patio de maniobras adyacente a un centro de distribución detallista.
+                    </div>
+                </div>
+
+                <!-- Patio 2 -->
+                <div class="type-card contenedores bg-slate-800/80 border border-slate-700 rounded-2xl p-6 transition hover:border-brand-500">
+                    <div class="text-blue-400 text-3xl mb-4"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <span class="text-xs text-blue-300 bg-blue-500/20 px-2 py-1 rounded font-semibold uppercase">Contenedores</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Patio de Contenedores</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Área destinada a almacenar temporalmente, organizar, apilar e inspeccionar contenedores vacíos o cargados con equipo pesado.
+                    </p>
+                    <div class="text-xs text-slate-400 bg-slate-900/50 p-3 rounded-lg">
+                        <strong>Equipo clave:</strong> Grúas de alcance (Reach Stackers) y montacargas de alta capacidad.
+                    </div>
+                </div>
+
+                <!-- Patio 3 -->
+                <div class="type-card transporte bg-slate-800/80 border border-slate-700 rounded-2xl p-6 transition hover:border-brand-500">
+                    <div class="text-emerald-400 text-3xl mb-4"><i class="fa-solid fa-trailer"></i></div>
+                    <span class="text-xs text-emerald-300 bg-emerald-500/20 px-2 py-1 rounded font-semibold uppercase">Flotas de Carga</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Patio de Transporte / Remolques</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Especializado en estacionar tractocamiones, remolques y semirremolques, así como ejecutar procesos de enganche y desenganche rápido.
+                    </p>
+                    <div class="text-xs text-slate-400 bg-slate-900/50 p-3 rounded-lg">
+                        <strong>Operación clave:</strong> Intercambio dinámico de cajas secas y refrigeradas.
+                    </div>
+                </div>
+
+                <!-- Patio 4 -->
+                <div class="type-card resguardo bg-slate-800/80 border border-slate-700 rounded-2xl p-6 transition hover:border-brand-500">
+                    <div class="text-amber-400 text-3xl mb-4"><i class="fa-solid fa-car-side"></i></div>
+                    <span class="text-xs text-amber-300 bg-amber-500/20 px-2 py-1 rounded font-semibold uppercase">Automotriz</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Patio de Resguardo Vehicular</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Permite almacenar temporalmente automóviles u otras unidades terminadas previo a su entrega final, exportación o distribución a agencias.
+                    </p>
+                    <div class="text-xs text-slate-400 bg-slate-900/50 p-3 rounded-lg">
+                        <strong>Requisito:</strong> Extensa superficie plana y estrictos controles contra daños.
+                    </div>
+                </div>
+
+                <!-- Patio 5 -->
+                <div class="type-card intermodal bg-slate-800/80 border border-slate-700 rounded-2xl p-6 transition hover:border-brand-500">
+                    <div class="text-purple-400 text-3xl mb-4"><i class="fa-solid fa-train-subway"></i></div>
+                    <span class="text-xs text-purple-300 bg-purple-500/20 px-2 py-1 rounded font-semibold uppercase">Ferroviario / Multimodal</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Patio Ferroviario o Intermodal</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Apoya la organización y transferencia de unidades de carga entre la red carretera y el sistema de ferrocarril mediante conexiones directas.
+                    </p>
+                    <div class="text-xs text-slate-400 bg-slate-900/50 p-3 rounded-lg">
+                        <strong>Conexión:</strong> Terminales intermodales transfronterizas e interiores.
+                    </div>
+                </div>
+
+                <!-- Patio 6 -->
+                <div class="type-card intermodal bg-slate-800/80 border border-slate-700 rounded-2xl p-6 transition hover:border-brand-500">
+                    <div class="text-rose-400 text-3xl mb-4"><i class="fa-solid fa-ship"></i></div>
+                    <span class="text-xs text-rose-300 bg-rose-500/20 px-2 py-1 rounded font-semibold uppercase">Marítimo</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Patio Portuario</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Espacio dentro de una instalación portuaria destinado a organizar contenedores antes o después de su traslado entre buques y transporte terrestre.
+                    </p>
+                    <div class="text-xs text-slate-400 bg-slate-900/50 p-3 rounded-lg">
+                        <strong>Función:</strong> Amortiguador entre la carga/descarga de navíos y el autotransporte.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Infraestructura y Equipo -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-brand-100/50 px-3 py-1 rounded-full">Sección 05</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Infraestructura y Equipamiento Requerido</h2>
+                <p class="text-slate-600 mt-4 text-lg">Elementos físicos y tecnológicos indispensables expuestos en el documento técnico.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Infraestructura Física -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Infraestructura Física</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span><strong>Accesos y Caseta:</strong> Diseñados para tránsito pesado con puntos de control y registro operativo.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span><strong>Superficie Pavimentada:</strong> Acondicionada estructuralmente para soportar grandes tonelajes.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span><strong>Espacios Señalizados:</strong> Zonas diferenciadas de esperas, aparcamiento, maniobras y circulación.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span><strong>Perímetro de Seguridad:</strong> Iluminación de alta potencia, cercas reforzadas y cámaras CCTV.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span><strong>Andenes y Rampas:</strong> Conectividad directa cuando el patio enlaza a un almacén central.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span><strong>Áreas de Servicios:</strong> Oficinas operativas, servicios sanitarios y salas de descanso para conductores.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Equipo y Tecnología -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-accent-500 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-truck-pickup"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Equipo Mecánico y Digital</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent-500 mt-1"></i>
+                            <span><strong>Tractores de Patio (Mules):</strong> Vehículos especializados para el movimiento ágil de remolques.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent-500 mt-1"></i>
+                            <span><strong>Montacargas y Grúas:</strong> Maquinaria pesada para manipulación y estibado de contenedores.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent-500 mt-1"></i>
+                            <span><strong>Sistemas Digitales (YMS):</strong> Software para agendamiento de citas, registro de placas y contenedores.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent-500 mt-1"></i>
+                            <span><strong>Identificación Digital:</strong> Códigos de barras/QR o TAGs RFID para trazabilidad en tiempo real.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent-500 mt-1"></i>
+                            <span><strong>Control de Tiempos:</strong> Monitoreo automatizado de ingresos, estadías y salidas de unidades.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Ejemplo de Operación Paso a Paso -->
+    <section id="operacion" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Sección 06</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Flujo Operativo de un Patio</h2>
+                <p class="text-slate-600 mt-4 text-lg">Recorrido secuencial estándar desde el arribo hasta la salida del vehículo de carga.</p>
+            </div>
+
+            <!-- Workflow Steps Container -->
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-5 rounded-2xl border-2 border-brand-500 shadow-md text-center">
+                        <div class="w-10 h-10 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center mx-auto mb-3 text-lg">1</div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Arribo y Registro</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">Llegada a la entrada principal; se verifica matrícula, chofer y motivo de visita.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                        <div class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center mx-auto mb-3 text-lg">2</div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Verificación</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">Validación de citas en el sistema y asignación de cajón o área de espera.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                        <div class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center mx-auto mb-3 text-lg">3</div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Tránsito Interno</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">Desplazamiento de la unidad a través de los carriles y rutas señalizadas.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                        <div class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center mx-auto mb-3 text-lg">4</div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Carga / Descarga</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">Posicionamiento en andén o maniobras de enganche y desenganche.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center mx-auto mb-3 text-lg">5</div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Registro de Salida</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">Verificación final de salida, sellos de seguridad e inspección del sistema.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Ejemplos Reales -->
+    <section id="casos" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Sección 07</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-3">Casos Reales de la Industria</h2>
+                <p class="text-slate-400 mt-4 text-lg">Ejemplos citados explícitamente en la guía de estudio para contextualizar el sector.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Caso 1 -->
+                <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded">Querétaro, Méx.</span>
+                            <i class="fa-solid fa-warehouse text-slate-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">DSV Contract Logistics</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Instalación referente ubicada en Querétaro con un impresionante patio de maniobras de <span class="text-white font-bold underline decoration-brand-500">8,000 m²</span>, integrado con plataformas y servicios de almacenaje.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 text-xs text-slate-400">
+                        <strong>Categoría:</strong> Patio integrado a almacén y distribución.
+                    </div>
+                </div>
+
+                <!-- Caso 2 -->
+                <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded">Jalisco, Méx.</span>
+                            <i class="fa-solid fa-boxes-packing text-slate-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Container Clipper Yard</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Ubicado en Santa Cruz de las Flores, Jalisco. Operador especializado en patios de contenedores ofreciendo resguardo, mantenimiento y reparación técnica.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 text-xs text-slate-400">
+                        <strong>Categoría:</strong> Operador de patios de contenedores.
+                    </div>
+                </div>
+
+                <!-- Caso 3 -->
+                <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded">Nacional</span>
+                            <i class="fa-solid fa-train text-slate-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Terminales Permisionadas</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Instalaciones autorizadas por la Agencia de Trenes y Transporte Público Integrado para transferir carga entre ferrocarril y autotransporte nacional.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 text-xs text-slate-400">
+                        <strong>Categoría:</strong> Operación Intermodal Ferroviaria.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Ventajas y Retos -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Sección 08</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Ventajas vs. Retos Operativos</h2>
+                <p class="text-slate-600 mt-4 text-lg">Balance estratégico entre el valor agregado y los desafíos de la operación diaria.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Ventajas -->
+                <div class="bg-emerald-50/50 border border-emerald-200 rounded-2xl p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Ventajas Competitivas</h3>
+                    </div>
+                    <ul class="space-y-3.5 text-slate-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Mayor organización de vehículos y orden sistemático del recinto.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Reducción significativa de movimientos improvisados e innecesarios.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Estricto control de entradas, salidas y trazabilidad horaria.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Sincronización fluida con líneas de transporte y almacenes centrales.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Resguardo seguro para unidades, contenedores y mercancías en tránsito.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Retos -->
+                <div class="bg-rose-50/50 border border-rose-200 rounded-2xl p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Retos y Desafíos</h3>
+                    </div>
+                    <ul class="space-y-3.5 text-slate-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i>
+                            <span>Riesgo de congestión en horarios pico de alta demanda logística.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i>
+                            <span>Necesidad constante de expansión y disponibilidad de espacio.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i>
+                            <span>Costos de mantenimiento continuo de pavimentos y maquinaria.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i>
+                            <span>Coordinación rigurosa de citas y documentación sin errores.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 mt-1"></i>
+                            <span>Prevención activa de incidentes o daños a mercancías y vehículos.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: Checklist / Evaluador de Patios -->
+    <section id="evaluador" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold text-xs uppercase tracking-widest bg-brand-100/50 px-3 py-1 rounded-full">Sección 09</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Evaluador de Patios Logísticos</h2>
+                <p class="text-slate-600 mt-4 text-lg">Checklist interactivo basado en los 7 criterios clave de selección de la guía UPQ.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-200 shadow-xl p-6 sm:p-10">
+                <p class="text-sm text-slate-600 mb-6">Selecciona los criterios que cumple tu patio o el patio en evaluación para obtener una calificación de aptitud operacional:</p>
+
+                <div class="space-y-4" id="checklist-container">
+                    <label class="flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                        <input type="checkbox" onchange="calculateScore()" class="chk-item mt-1 w-5 h-5 text-brand-500 rounded focus:ring-brand-500">
+                        <span class="ml-3 text-sm font-medium text-slate-800">1. Ubicación estratégica y excelente conectividad con rutas principales.</span>
+                    </label>
+
+                    <label class="flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                        <input type="checkbox" onchange="calculateScore()" class="chk-item mt-1 w-5 h-5 text-brand-500 rounded focus:ring-brand-500">
+                        <span class="ml-3 text-sm font-medium text-slate-800">2. Capacidad suficiente y adecuación para el tipo de unidades a recibir.</span>
+                    </label>
+
+                    <label class="flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                        <input type="checkbox" onchange="calculateScore()" class="chk-item mt-1 w-5 h-5 text-brand-500 rounded focus:ring-brand-500">
+                        <span class="ml-3 text-sm font-medium text-slate-800">3. Óptimo estado de la superficie, accesos amplios y buena circulación interna.</span>
+                    </label>
+
+                    <label class="flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                        <input type="checkbox" onchange="calculateScore()" class="chk-item mt-1 w-5 h-5 text-brand-500 rounded focus:ring-brand-500">
+                        <span class="ml-3 text-sm font-medium text-slate-800">4. Servicios integrales disponibles (maniobras, resguardo, carga, mantenimiento).</span>
+                    </label>
+
+                    <label class="flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                        <input type="checkbox" onchange="calculateScore()" class="chk-item mt-1 w-5 h-5 text-brand-500 rounded focus:ring-brand-500">
+                        <span class="ml-3 text-sm font-medium text-slate-800">5. Medidas de seguridad avanzadas (cercado, CCTV, iluminación, vigilancia).</span>
+                    </label>
+
+                    <label class="flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                        <input type="checkbox" onchange="calculateScore()" class="chk-item mt-1 w-5 h-5 text-brand-500 rounded focus:ring-brand-500">
+                        <span class="ml-3 text-sm font-medium text-slate-800">6. Disponibilidad de personal capacitado, maquinarias y sistemas de registro.</span>
+                    </label>
+
+                    <label class="flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
+                        <input type="checkbox" onchange="calculateScore()" class="chk-item mt-1 w-5 h-5 text-brand-500 rounded focus:ring-brand-500">
+                        <span class="ml-3 text-sm font-medium text-slate-800">7. Costos competitivos, horarios convenientes y bajos tiempos de espera.</span>
+                    </label>
+                </div>
+
+                <!-- Result Box -->
+                <div class="mt-8 p-6 rounded-xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold">Puntaje Obtenido</span>
+                        <div class="text-3xl font-extrabold text-brand-400" id="score-text">0 / 7 Puntos</div>
+                    </div>
+                    <div id="score-status" class="text-sm font-medium px-4 py-2 rounded-lg bg-slate-800 text-slate-300">
+                        Selecciona los criterios arriba para evaluar.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Cuestionario Interactivo -->
+    <section id="quiz" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-500 font-bold text-xs uppercase tracking-widest bg-accent-50 px-3 py-1 rounded-full">Sección 10</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Evaluación de Conocimientos</h2>
+                <p class="text-slate-600 mt-4 text-lg">Demuestra lo aprendido con este quiz interactivo basado estrictamente en el documento UPQ.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-slate-50 rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-lg">
+                <div id="quiz-container" class="space-y-8">
+                    <!-- Q1 -->
+                    <div class="quiz-question space-y-3">
+                        <h3 class="font-bold text-slate-900 text-lg">1. ¿Qué es un patio logístico según la guía?</h3>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, false, 1)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">A) Un almacén exclusivo para mercancía perecedera.</button>
+                            <button onclick="checkAnswer(this, true, 1)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">B) Un espacio acondicionado para recibir, estacionar, organizar, resguardar y mover vehículos de carga o mercancías.</button>
+                            <button onclick="checkAnswer(this, false, 1)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">C) Una carretera para tránsito continuo de tractocamiones.</button>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="quiz-question space-y-3">
+                        <h3 class="font-bold text-slate-900 text-lg">2. ¿Qué dimensiones posee el patio de maniobras de DSV Querétaro citado en el documento?</h3>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, false, 2)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">A) 5,000 m²</button>
+                            <button onclick="checkAnswer(this, true, 2)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">B) 8,000 m²</button>
+                            <button onclick="checkAnswer(this, false, 2)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">C) 12,000 m²</button>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="quiz-question space-y-3">
+                        <h3 class="font-bold text-slate-900 text-lg">3. ¿Cuál es el primer paso en el ejemplo de operación de un patio logístico?</h3>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, false, 3)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">A) Posicionarse directamente en el andén de carga.</button>
+                            <button onclick="checkAnswer(this, true, 3)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">B) Registro en la entrada indicando unidad y motivo de visita.</button>
+                            <button onclick="checkAnswer(this, false, 3)" class="w-full text-left p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-sm font-medium transition">C) Enganchar el remolque sin detenerse.</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-results" class="mt-8 p-6 bg-brand-50 border border-brand-200 rounded-xl text-center hidden">
+                    <h4 class="text-xl font-bold text-brand-900">¡Evaluación Finalizada!</h4>
+                    <p class="text-slate-700 mt-2 text-sm" id="quiz-score-display"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11: Bibliografía Oficial -->
+    <section class="py-16 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <span class="text-slate-400 font-bold text-xs uppercase tracking-widest block mb-1">Sección 11</span>
+                <h2 class="text-2xl font-bold">Bibliografía y Fuentes Consultadas</h2>
+            </div>
+
+            <ol class="space-y-4 text-sm text-slate-300 list-decimal list-inside">
+                <li class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                    <strong class="text-white">Secretaría de Desarrollo Agrario, Territorial y Urbano (SEDATU).</strong> Guía Técnica: Diseño de bahías de carga y descarga. Gobierno de México (2022). 
+                    <a href="https://www.gob.mx/sedatu/documentos/105886" target="_blank" class="text-brand-400 underline hover:text-brand-300 ml-1">Ver enlace</a>
+                </li>
+                <li class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                    <strong class="text-white">Diario Oficial de la Federación.</strong> NOM-002-SEDATU-2022, Equipamiento en los instrumentos que conforman el Sistema General de Planeación Territorial. 
+                    <a href="https://sidof.segob.gob.mx/notas/docFuente/5662152" target="_blank" class="text-brand-400 underline hover:text-brand-300 ml-1">Ver enlace</a>
+                </li>
+                <li class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                    <strong class="text-white">Agencia de Trenes y Transporte Público Integrado.</strong> Terminales Permisionadas de Carga. Gobierno de México. 
+                    <a href="https://www.gob.mx/attrapi/articulos/terminales-permisionadas" target="_blank" class="text-brand-400 underline hover:text-brand-300 ml-1">Ver enlace</a>
+                </li>
+                <li class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                    <strong class="text-white">DSV.</strong> DSV Contract Logistics Querétaro. Información de instalaciones y patio de maniobras. 
+                    <a href="https://www.dsv.com/es-mx/nuestras-soluciones/logistica-de-contrato/almacenaje/queretaro" target="_blank" class="text-brand-400 underline hover:text-brand-300 ml-1">Ver enlace</a>
+                </li>
+                <li class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                    <strong class="text-white">Container Clipper Yard.</strong> Servicios de logística y patios de contenedores. 
+                    <a href="https://www.ccy.com.mx/" target="_blank" class="text-brand-400 underline hover:text-brand-300 ml-1">Ver enlace</a>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 text-xs py-8 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+            <p>© Universidad Politécnica de Querétaro - Licenciatura en Comercio Internacional y Aduanas</p>
+            <p>Materia: LCIA227 | Elaborado por: Madariaga Escalona J.R., Martinez Martinez L.J., Salazar Zarate S.Y.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Filtering Logic for Section 4 (Types of Yards)
+        function filterTypes(category) {
+            const cards = document.querySelectorAll('.type-card');
+            const buttons = document.querySelectorAll('.type-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-500', 'text-white');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-brand-500', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Score Evaluator Logic for Section 9
+        function calculateScore() {
+            const checkboxes = document.querySelectorAll('.chk-item');
+            let count = 0;
+            checkboxes.forEach(chk => {
+                if (chk.checked) count++;
+            });
+
+            const scoreText = document.getElementById('score-text');
+            const scoreStatus = document.getElementById('score-status');
+
+            scoreText.innerText = `${count} / 7 Puntos`;
+
+            if (count === 0) {
+                scoreStatus.innerText = "Selecciona los criterios arriba para evaluar.";
+                scoreStatus.className = "text-sm font-medium px-4 py-2 rounded-lg bg-slate-800 text-slate-300";
+            } else if (count <= 3) {
+                scoreStatus.innerText = "Aptitud Baja: Infraestructura limitada.";
+                scoreStatus.className = "text-sm font-medium px-4 py-2 rounded-lg bg-rose-900 text-rose-200";
+            } else if (count <= 5) {
+                scoreStatus.innerText = "Aptitud Media: Patio funcional regular.";
+                scoreStatus.className = "text-sm font-medium px-4 py-2 rounded-lg bg-amber-900 text-amber-200";
+            } else {
+                scoreStatus.innerText = "Aptitud Excelente: Altas prestaciones logísticas.";
+                scoreStatus.className = "text-sm font-medium px-4 py-2 rounded-lg bg-emerald-900 text-emerald-200";
+            }
+        }
+
+        // Quiz Logic for Section 10
+        let userScore = 0;
+        let answered = { 1: false, 2: false, 3: false };
+
+        function checkAnswer(btn, isCorrect, qId) {
+            if (answered[qId]) return;
+
+            answered[qId] = true;
+            const parent = btn.parentElement;
+            const buttons = parent.querySelectorAll('button');
+
+            buttons.forEach(b => {
+                b.disabled = true;
+                b.classList.add('opacity-60');
+            });
+
+            if (isCorrect) {
+                btn.classList.remove('bg-white', 'hover:bg-slate-100', 'border-slate-200');
+                btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+                userScore++;
+            } else {
+                btn.classList.remove('bg-white', 'hover:bg-slate-100', 'border-slate-200');
+                btn.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900', 'font-bold');
+            }
+
+            // Check if all answered
+            if (answered[1] && answered[2] && answered[3]) {
+                const results = document.getElementById('quiz-results');
+                const scoreDisplay = document.getElementById('quiz-score-display');
+                results.classList.remove('hidden');
+                scoreDisplay.innerText = `Obtuviste ${userScore} de 3 respuestas correctas (${Math.round((userScore/3)*100)}%).`;
+            }
+        }
+    </script>
+</body>
+</html>
